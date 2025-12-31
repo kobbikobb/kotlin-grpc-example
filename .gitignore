@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# IDE (IntelliJ/Android Studio)
+.idea/
+*.iml
+
+# Gradle
+.gradle/
+build/
+
+# Kotlin
+.kotlin/
+*.class
+kls_database.db
