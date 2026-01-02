@@ -9,6 +9,7 @@ dependencies {
     implementation(project(":proto"))
     implementation(libs.guava)
     implementation(libs.grpc.netty)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 }
 
 testing {

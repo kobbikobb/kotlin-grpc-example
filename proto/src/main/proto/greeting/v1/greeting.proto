@@ -7,7 +7,7 @@ option java_package = "com.example.greeting.v1";
 option java_outer_classname = "GreetingProto";
 
 service GreetingService {
-  rpc Greet (GreetRequest) returns (GreetResponse);
+  rpc greet (GreetRequest) returns (GreetResponse);
 }
 
 message GreetRequest {
