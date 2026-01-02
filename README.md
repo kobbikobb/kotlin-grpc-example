@@ -2,11 +2,10 @@
 
 ## proto
 
-./gradlew :proto:build
+- ./gradlew :proto:build
 
 ## Services
 
-- Server
-  ./gradlew run
-
-- Client
+- server
+  - ./gradlew :services:server:run
+- client

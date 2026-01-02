@@ -13,3 +13,6 @@ build/
 .kotlin/
 *.class
 kls_database.db
+
+# Generated proto code
+**/build/generated/
