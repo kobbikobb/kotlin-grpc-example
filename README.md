@@ -8,4 +8,6 @@
 
 - server
   - ./gradlew :services:server:run
+
 - client
+  - ./gradlew :services:client:run

@@ -1,8 +1,8 @@
-package org.example
+package org.example.server
 
-import com.example.greeting.GreetingServiceImpl
 import com.example.greeting.v1.GreetRequest
 import com.example.greeting.v1.GreetResponse
+import com.example.server.GreetingServiceImpl
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

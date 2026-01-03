@@ -1,12 +1,12 @@
-package org.example
+package org.example.server
 
-import com.example.greeting.GreetingServiceImpl
 import com.example.greeting.v1.GreetRequest
 import com.example.greeting.v1.GreetResponse
+import com.example.server.GreetingServiceImpl
 import io.grpc.Server
 import io.grpc.ServerBuilder
 
-class App(
+class GreetServer(
     private val port: Int,
     private val greetingService: GreetingServiceImpl,
 ) {
@@ -17,6 +17,7 @@ class App(
             .build()
 
     fun start() {
+        println("Starting server...")
         server.start()
         println("Server started, listening on $port")
 
@@ -32,13 +33,4 @@ class App(
     fun blockUntilShutdown() {
         server.awaitTermination()
     }
-}
-
-fun main() {
-    var port = 50051
-    var greetingService = GreetingServiceImpl()
-
-    var app = App(port, greetingService)
-    app.start()
-    app.blockUntilShutdown()
 }

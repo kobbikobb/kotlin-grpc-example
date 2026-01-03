@@ -7,8 +7,8 @@ repositories { mavenCentral() }
 
 dependencies {
     implementation(project(":proto"))
-    implementation(libs.guava)
     implementation(libs.grpc.netty)
+    implementation(libs.grpc.kotlin.stub)
     implementation(libs.kotlinx.coroutines.core)
 }
 
@@ -24,5 +24,9 @@ testing {
 java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 
 application {
-    mainClass = "org.example.server.MainKt"
+    mainClass = "org.example.client.MainKt"
+}
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
 }
