@@ -26,7 +26,3 @@ java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 application {
     mainClass = "org.example.client.MainKt"
 }
-
-tasks.named<JavaExec>("run") {
-    standardInput = System.`in`
-}

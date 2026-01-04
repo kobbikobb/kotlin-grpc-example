@@ -4,7 +4,7 @@ import com.example.server.GreetingServiceImpl
 import org.example.server.GreetServer
 
 fun main() {
-    var port = 50051
+    val port = System.getenv("GRPC_SERVER_PORT")?.toIntOrNull() ?: 50051
     var greetingService = GreetingServiceImpl()
 
     var server = GreetServer(port, greetingService)
