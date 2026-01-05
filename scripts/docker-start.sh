@@ -18,7 +18,7 @@ docker run \
     --network greeting-network \
     --rm \
     -e GRPC_SERVER_HOST=greeting-server \
-    greeting-client:latest "Jakob, how is sending a greeting from the client!"
+    greeting-client:latest "Jakob the greeting sender"
 
 docker stop greeting-server
 docker rm greeting-server

@@ -13,14 +13,17 @@ COPY proto/build.gradle.kts proto/
 COPY services/server/build.gradle.kts services/server/
 
 # Download dependencies
-RUN ./gradlew :proto:dependencies :services:server:dependencies --no-daemon || true
+RUN --mount=type=cache,target=/root/.gradle \
+    ./gradlew :proto:dependencies :services:server:dependencies --no-daemon || true
 
 # Copy source code
 COPY proto/src proto/src
 COPY services/server/src services/server/src
 
 # Build distribution
-RUN ./gradlew :services:server:installDist --no-daemon --build-cache
+RUN --mount=type=cache,target=/root/.gradle \
+    --mount=type=cache,target=/app/build \
+    ./gradlew :services:server:installDist --no-daemon --build-cache
 
 # ---------- Runtime stage ----------
 FROM eclipse-temurin:21-jre

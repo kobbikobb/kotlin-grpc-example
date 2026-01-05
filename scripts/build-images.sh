@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DOCKER_BUILDKIT=1
+
 docker build \
     -f services/server/Dockerfile \
     -t greeting-server:latest \
